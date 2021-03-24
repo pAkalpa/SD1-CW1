@@ -81,19 +81,17 @@ def HistogramGenerator():
     print('-'*60)
 
 def ReRun():
-    
     while True:
         print('-'*60)
         print('Staff Version with Histogram\n')
-        ValidateInput()
         while True:
+            ValidateInput()
             option = str(input("\nWould you like to enter another set of data?\nEnter 'y' for yes or 'q' to quit and view results: "))
             print('')
-            if option == 'q' or option == 'y':
-                if option == 'q':
-                    break
-                elif option == 'y':
-                    ValidateInput()
+            if option == 'q':
+                break
+            elif option == 'y':
+                continue
             else:
                 print("Please Enter 'y' or 'q'" )
         break
