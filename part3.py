@@ -9,6 +9,24 @@ exclude_count = 0
 progress_count = 0
 total_count = 0
 
+def Main():
+    print('-'*60)
+    print('Staff Version with Histogram\n')
+    while True:
+        ValidateInput()
+        option = str(input("\nWould you like to enter another set of data?\nEnter 'y' for yes or 'q' to quit and view results: "))
+        print('')
+        while option not in ['y','q']:
+                print("Invalid Option! Please Enter 'y' or 'q'")
+                option = str(input("\nWould you like to enter another set of data?\nEnter 'y' for yes or 'q' to quit and view results: "))
+                print('')
+        else:
+            if option == 'q':
+                break
+            else:
+                pass
+    HistogramGenerator()
+
 def ValidateInput():
     range_credit_list = [0, 20, 40, 60, 80, 100, 120]
     global total_count
@@ -16,7 +34,7 @@ def ValidateInput():
         level_credit_list = []
         while True:
             try:
-                pass_credit = int(input('Enter your total PASS credits:'))
+                pass_credit = int(input('Enter your total PASS credits: '))
                 if pass_credit in range_credit_list:
                     break
                 else:
@@ -26,7 +44,7 @@ def ValidateInput():
 
         while True:
             try:
-                defer_credit = int(input('Enter your total DEFER credits:'))
+                defer_credit = int(input('Enter your total DEFER credits: '))
                 if defer_credit in range_credit_list:
                     break
                 else:
@@ -36,7 +54,7 @@ def ValidateInput():
         
         while True:
             try:
-                fail_credit = int(input('Enter your total FAIL credits:'))
+                fail_credit = int(input('Enter your total FAIL credits: '))
                 if fail_credit in range_credit_list:
                     break
                 else:
@@ -80,21 +98,4 @@ def HistogramGenerator():
     print(f'{total_count} outcomes in total.')
     print('-'*60)
 
-def ReRun():
-    while True:
-        print('-'*60)
-        print('Staff Version with Histogram\n')
-        while True:
-            ValidateInput()
-            option = str(input("\nWould you like to enter another set of data?\nEnter 'y' for yes or 'q' to quit and view results: "))
-            print('')
-            if option == 'q':
-                break
-            elif option == 'y':
-                continue
-            else:
-                print("Please Enter 'y' or 'q'" )
-        break
-    HistogramGenerator()
-
-ReRun()
+Main()
