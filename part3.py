@@ -93,8 +93,8 @@ def HistogramGenerator():
     print('Horizontal Histogram')
     print(f"progress {progress_count}\t: {'*'*progress_count}")
     print(f"Trailer {moduleT_count}\t: {'*'*moduleT_count}")
-    print(f"progress {moduleR_count}\t: {'*'*moduleR_count}")
-    print(f"progress {exclude_count}\t: {'*'*exclude_count}\n")
+    print(f"Retriever {moduleR_count}\t: {'*'*moduleR_count}")
+    print(f"Excluded {exclude_count}\t: {'*'*exclude_count}\n")
     print(f'{total_count} outcomes in total.')
     print('-'*60)
 
