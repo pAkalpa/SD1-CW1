@@ -9,10 +9,16 @@ exclude_count = 0
 progress_count = 0
 total_count = 0
 
+pass_credit = 0
+defer_credit = 0
+fail_credit = 0
+
+dataset = [[120, 0, 0], [100, 20, 0], [100, 0, 20], [80, 20, 20], [60, 40, 20],[40, 40, 40], [20, 40, 60], [20, 20, 80], [20, 0, 100], [0, 0, 120]]
+
 def Main():
     print('-'*60)
     print('Staff Version with Histogram\n')
-    ReRun()
+    DirectInput()
     HistogramGenerator()
 
 def ValidateInput():
@@ -22,7 +28,6 @@ def ValidateInput():
         level_credit_list = []
         while True:
             try:
-                pass_credit = int(input('Enter your total PASS credits: '))
                 if pass_credit in range_credit_list:
                     break
                 else:
@@ -32,7 +37,6 @@ def ValidateInput():
 
         while True:
             try:
-                defer_credit = int(input('Enter your total DEFER credits: '))
                 if defer_credit in range_credit_list:
                     break
                 else:
@@ -42,7 +46,6 @@ def ValidateInput():
         
         while True:
             try:
-                fail_credit = int(input('Enter your total FAIL credits: '))
                 if fail_credit in range_credit_list:
                     break
                 else:
@@ -50,7 +53,8 @@ def ValidateInput():
             except ValueError:
                 print('Integer required\n')
         
-        level_credit_list.extend([pass_credit,defer_credit,fail_credit])            
+        level_credit_list.extend([pass_credit,defer_credit,fail_credit])
+        # print(sum(level_credit_list)) # for debugging Purpose         
         if sum(level_credit_list) == 120:
             break
         else:
@@ -77,40 +81,22 @@ def Logic(lct):
     print(message)
 
 def HistogramGenerator():
+    print()
     print('-'*60)
-    print(f'''Vertical Histogram\nProgress {progress_count} | Trailer {moduleT_count} | Retriever {moduleR_count} | Excluded {exclude_count}''')
-    space2 = " "*6
-    space1 = " "*5
-    p_outcome = [progress_count,moduleT_count,moduleR_count,exclude_count]
-
-    # ref: AllTech(2018). console horizontal histogram in python 😀.Available at:https://www.youtube.com/watch?v=h_qlWgIvOZo (Accessed: 25 March 2021).
-    for i in p_outcome:
-        while not all (i <= 0 for i in p_outcome):
-            toPrint = ''
-            for j in range(4):
-                if p_outcome[j] > 0:
-                    toPrint += space1+'*\t'
-                    p_outcome[j] -= 1
-                else:
-                    toPrint += space1+'\t'+space2
-            print(toPrint)
-
+    print('Horizontal Histogram')
+    print(f"progress {progress_count}\t: {'*'*progress_count}")
+    print(f"Trailer {moduleT_count}\t: {'*'*moduleT_count}")
+    print(f"Retriever {moduleR_count}\t: {'*'*moduleR_count}")
+    print(f"Excluded {exclude_count}\t: {'*'*exclude_count}\n")
     print(f'{total_count} outcomes in total.')
     print('-'*60)
 
-def ReRun():
-    while True:
+def DirectInput():
+    global pass_credit, defer_credit, fail_credit
+    for i in range(len(dataset)):
+        pass_credit = dataset[i][0]
+        defer_credit = dataset[i][1]
+        fail_credit = dataset[i][2]
         ValidateInput()
-        option = str(input("\nWould you like to enter another set of data?\nEnter 'y' for yes or 'q' to quit and view results: "))
-        print('')
-        while option not in ['y','q']:
-                print("Invalid Option! Please Enter 'y' or 'q'")
-                option = str(input("\nWould you like to enter another set of data?\nEnter 'y' for yes or 'q' to quit and view results: "))
-                print('')
-        else:
-            if option == 'q':
-                break
-            else:
-                pass
 
 Main()
