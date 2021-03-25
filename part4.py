@@ -83,7 +83,7 @@ def HistogramGenerator(): # Histogram Generator Function
     space1 = " "*5
     p_outcome = [progress_count,moduleT_count,moduleR_count,exclude_count] # create list and add variables to list
 
-    # ref: AllTech(2018). console horizontal histogram in python 😀.Available at:https://www.youtube.com/watch?v=h_qlWgIvOZo (Accessed: 25 March 2021).
+# Line No:87-96 reference: AllTech, 2018. console horizontal histogram in python 😀. [video] Available at: <https://www.youtube.com/watch?v=h_qlWgIvOZo> [Accessed 25 March 2021]. 
     for i in p_outcome:
         while not all (i <= 0 for i in p_outcome):
             toPrint = '' # declare varible
