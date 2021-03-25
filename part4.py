@@ -79,8 +79,8 @@ def Logic(lct): # Logic Fuction with parsed list as parameter
 def HistogramGenerator(): # Histogram Generator Function
     print('-'*60) # print dashed line 60char's long
     print(f'''Vertical Histogram\nProgress {progress_count} | Trailer {moduleT_count} | Retriever {moduleR_count} | Excluded {exclude_count}''')
-    space2 = " "*6
-    space1 = " "*5
+    space2 = " "*5
+    space1 = " "*6
     p_outcome = [progress_count,moduleT_count,moduleR_count,exclude_count] # create list and add variables to list
 
 # Line No:87-96 reference: AllTech, 2018. console horizontal histogram in python 😀. [video] Available at: <https://www.youtube.com/watch?v=h_qlWgIvOZo> [Accessed 25 March 2021]. 
@@ -89,10 +89,10 @@ def HistogramGenerator(): # Histogram Generator Function
             toPrint = '' # declare varible
             for j in range(4):
                 if p_outcome[j] > 0:
-                    toPrint += space1+'*\t'
+                    toPrint += space1+'*'+space2
                     p_outcome[j] -= 1
                 else:
-                    toPrint += space1+'\t'+space2
+                    toPrint += space1+' '+space2
             print(toPrint)
 
     print(f'{total_count} outcomes in total.')
