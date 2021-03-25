@@ -90,22 +90,23 @@ def Logic(lct):
 
 def HistogramGenerator():
     print('-'*60)
-    print('''Vertical Histogram\nProgress\t Trailer\tRetriever\tExcluded''')
-    space = " "*2
-    
-    for i in range(total_count):
-        for j in ([progress_count,moduleT_count,moduleR_count,exclude_count]):
-            if j > 0:
-                print(space,"*" ,space,end=" ")
-            else:
-                print(space," ",space, end=" ")
-        print('')
+    print(f'''Vertical Histogram\nProgress {progress_count} | Trailer {moduleT_count} | Retriever {moduleR_count} | Excluded {exclude_count}''')
+    space2 = " "*6
+    space1 = " "*5
+    p_outcome = [progress_count,moduleT_count,moduleR_count,exclude_count]
 
-    # print(f"{'*'*progress_count}{'*'*moduleT_count}{'*'*moduleR_count}{'*'*exclude_count}\n")
-    # print(f"progress {progress_count}\t: {'*'*progress_count}")
-    # print(f"Trailer {moduleT_count}\t: {'*'*moduleT_count}")
-    # print(f"Retriever {moduleR_count}\t: {'*'*moduleR_count}")
-    # print(f"Excluded {exclude_count}\t: {'*'*exclude_count}\n")
+    # ref: AllTech(2018). console horizontal histogram in python 😀.Available at:https://www.youtube.com/watch?v=h_qlWgIvOZo (Accessed: 25 March 2021).
+    for i in p_outcome:
+        while not all (i <= 0 for i in p_outcome):
+            toPrint = ''
+            for j in range(4):
+                if p_outcome[j] > 0:
+                    toPrint += space1+'*\t'
+                    p_outcome[j] -= 1
+                else:
+                    toPrint += space1+'\t'+space2
+            print(toPrint)
+
     print(f'{total_count} outcomes in total.')
     print('-'*60)
 
