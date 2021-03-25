@@ -3,29 +3,29 @@
 # Student ID: w1833487        
 # Date: 23/03/2021
 
-def main():
-    level_credit_list = []
+def main(): # Main function
+    level_credit_list = [] # declare list to store user inputs 
 
-    print('-'*60)
-    pass_credit = int(input('Please Enter Your credits at pass: '))
-    defer_credit = int(input('Please Enter Your credits at defer: '))
-    fail_credit = int(input('Please Enter Your credits at fail: '))
+    print('-'*60) # print dashed line 60char's long
+    pass_credit = int(input('Please Enter Your credits at pass: ')) # take user input and assign it to a variable
+    defer_credit = int(input('Please Enter Your credits at defer: ')) # take user input and assign it to a variable
+    fail_credit = int(input('Please Enter Your credits at fail: ')) # take user input and assign it to a variable
+
+    level_credit_list.extend([pass_credit, defer_credit, fail_credit]) # extend list by adding variables
+    message = Logic(level_credit_list) # pass list to logic Fuction and call logic function and store return value
     
-    level_credit_list.extend([pass_credit, defer_credit, fail_credit])
-    message = logic(level_credit_list) 
-    
-    print(message)
-    print('-'*60)
+    print(message) # print returned values from Logic function
+    print('-'*60) # print dashed line 60char's long
 
-def logic(lct):
-    if (lct[0] == 0 and lct[1] <= 40) or (lct[0] == 20 and lct[1] <= 20) or (lct[0] == 40 and lct[1] == 0):
-        message = 'Exclude'
-    elif (lct[0] == 0 and lct[1] >= 60) or (lct[0] == 20 and lct[1] >= 40) or (lct[0] == 40 and lct[1] != 0) or (lct[0] == 60) or (lct[0] == 80):
-        message = 'Do not progress - module retriever'
-    elif (lct[0] == 100):
-        message = 'Progress (module trailer)'
-    elif (lct[0] == 120):
-        message = 'Progress'
-    return message
+def Logic(lct): # Logic Fuction with parsed list as parameter
+    if (lct[0] == 0 and lct[1] <= 40) or (lct[0] == 20 and lct[1] <= 20) or (lct[0] == 40 and lct[1] == 0): # condition 1
+        message = 'Exclude' # if condtion True: assign string to variable
+    elif (lct[0] == 0 and lct[1] >= 60) or (lct[0] == 20 and lct[1] >= 40) or (lct[0] == 40 and lct[1] != 0) or (lct[0] == 60) or (lct[0] == 80): # condition 2
+        message = 'Do not progress - module retriever'# if condtion True: assign string to variable
+    elif (lct[0] == 100): # condition 3
+        message = 'Progress (module trailer)' # if condtion True: assign string to variable
+    elif (lct[0] == 120): # condition 4
+        message = 'Progress' # if condtion True: assign string to variable
+    return message # return varible
 
-main()
+main() # calls main function

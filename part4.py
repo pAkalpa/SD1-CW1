@@ -3,28 +3,28 @@
 # Student ID: w1833487        
 # Date: 23/03/2021
 
-moduleT_count = 0
-moduleR_count = 0
-exclude_count = 0
-progress_count = 0
-total_count = 0
+moduleT_count = 0 # declare varible
+moduleR_count = 0 # declare varible
+exclude_count = 0 # declare varible
+progress_count = 0 # declare varible
+total_count = 0 # declare varible
 
-def Main():
-    print('-'*60)
+def Main(): # Main function
+    print('-'*60) # print dashed line 60char's long
     print('Staff Version with Histogram\n')
-    ReRun()
-    HistogramGenerator()
+    ReRun() # calls ReRun function
+    HistogramGenerator() # calls HistogramGenerator function
 
-def ValidateInput():
-    range_credit_list = [0, 20, 40, 60, 80, 100, 120]
-    global total_count
+def ValidateInput(): # use Inputs and Validation function
+    range_credit_list = [0, 20, 40, 60, 80, 100, 120] # declare list of valid input ranges
+    global total_count # declare varible as global
     while True:
-        level_credit_list = []
+        level_credit_list = [] # declare list to store user inputs
         while True:
             try:
-                pass_credit = int(input('Enter your total PASS credits: '))
+                pass_credit = int(input('Enter your total PASS credits: ')) # take user input and assign it to a variable
                 if pass_credit in range_credit_list:
-                    break
+                    break # if condition True: break loop
                 else:
                     print('Out of range\n')
             except ValueError:
@@ -32,9 +32,9 @@ def ValidateInput():
 
         while True:
             try:
-                defer_credit = int(input('Enter your total DEFER credits: '))
+                defer_credit = int(input('Enter your total DEFER credits: ')) # take user input and assign it to a variable
                 if defer_credit in range_credit_list:
-                    break
+                    break # if condition True: break loop
                 else:
                     print('Out of range\n')
             except ValueError:
@@ -42,51 +42,51 @@ def ValidateInput():
         
         while True:
             try:
-                fail_credit = int(input('Enter your total FAIL credits: '))
+                fail_credit = int(input('Enter your total FAIL credits: ')) # take user input and assign it to a variable
                 if fail_credit in range_credit_list:
-                    break
+                    break # if condition True: break loop
                 else:
                     print('Out of range\n')
             except ValueError:
                 print('Integer required\n')
         
-        level_credit_list.extend([pass_credit,defer_credit,fail_credit])            
+        level_credit_list.extend([pass_credit,defer_credit,fail_credit]) # extend list by adding variables           
         if sum(level_credit_list) == 120:
-            break
+            break # if condition True: break loop
         else:
             print('Total incorrect\n')
-            level_credit_list.clear
+            level_credit_list.clear # if condition False: clear list
     
-    total_count += 1
-    Logic(level_credit_list)
+    total_count += 1 # increment variable value by 1
+    Logic(level_credit_list) # calls Logic functions and parse list
 
-def Logic(lct):
-    global progress_count, moduleT_count, moduleR_count, exclude_count
+def Logic(lct): # Logic Fuction with parsed list as parameter
+    global progress_count, moduleT_count, moduleR_count, exclude_count # declare varibles as global
     if (lct[0] == 0 and lct[1] <= 40) or (lct[0] == 20 and lct[1] <= 20) or (lct[0] == 40 and lct[1] == 0):
-        message = 'Exclude'
-        exclude_count += 1
+        message = 'Exclude' # if condtion True: assign string to variable
+        exclude_count += 1 # increment variable value by 1
     elif (lct[0] == 0 and lct[1] >= 60) or (lct[0] == 20 and lct[1] >= 40) or (lct[0] == 40 and lct[1] != 0) or (lct[0] == 60) or (lct[0] == 80):
-        message = 'Do not progress - module retriever'
-        moduleR_count += 1
+        message = 'Do not progress - module retriever' # if condtion True: assign string to variable
+        moduleR_count += 1 # increment variable value by 1
     elif (lct[0] == 100):
-        message = 'Progress (module trailer)'
-        moduleT_count += 1
+        message = 'Progress (module trailer)' # if condtion True: assign string to variable
+        moduleT_count += 1 # increment variable value by 1
     elif (lct[0] == 120):
-        message = 'Progress'
-        progress_count += 1
+        message = 'Progress' # if condtion True: assign string to variable
+        progress_count += 1 # increment variable value by 1
     print(message)
 
-def HistogramGenerator():
-    print('-'*60)
+def HistogramGenerator(): # Histogram Generator Function
+    print('-'*60) # print dashed line 60char's long
     print(f'''Vertical Histogram\nProgress {progress_count} | Trailer {moduleT_count} | Retriever {moduleR_count} | Excluded {exclude_count}''')
     space2 = " "*6
     space1 = " "*5
-    p_outcome = [progress_count,moduleT_count,moduleR_count,exclude_count]
+    p_outcome = [progress_count,moduleT_count,moduleR_count,exclude_count] # create list and add variables to list
 
     # ref: AllTech(2018). console horizontal histogram in python 😀.Available at:https://www.youtube.com/watch?v=h_qlWgIvOZo (Accessed: 25 March 2021).
     for i in p_outcome:
         while not all (i <= 0 for i in p_outcome):
-            toPrint = ''
+            toPrint = '' # declare varible
             for j in range(4):
                 if p_outcome[j] > 0:
                     toPrint += space1+'*\t'
@@ -96,21 +96,21 @@ def HistogramGenerator():
             print(toPrint)
 
     print(f'{total_count} outcomes in total.')
-    print('-'*60)
+    print('-'*60) # print dashed line 60char's long
 
-def ReRun():
+def ReRun(): # Ask User for ReRun function
     while True:
-        ValidateInput()
-        option = str(input("\nWould you like to enter another set of data?\nEnter 'y' for yes or 'q' to quit and view results: "))
+        ValidateInput() # calls ValidateInput function
+        option = str(input("\nWould you like to enter another set of data?\nEnter 'y' for yes or 'q' to quit and view results: ")) # take user input and assign it to a variable
         print('')
         while option not in ['y','q']:
                 print("Invalid Option! Please Enter 'y' or 'q'")
-                option = str(input("\nWould you like to enter another set of data?\nEnter 'y' for yes or 'q' to quit and view results: "))
+                option = str(input("\nWould you like to enter another set of data?\nEnter 'y' for yes or 'q' to quit and view results: ")) # take user input and assign it to a variable
                 print('')
         else:
             if option == 'q':
-                break
+                break # if condition True: break loop
             else:
                 pass
 
-Main()
+Main() # calls main function
