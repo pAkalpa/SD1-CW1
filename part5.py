@@ -84,10 +84,10 @@ def HistogramGenerator(): # Histogram Generator Function
     print()
     print('-'*60) # print dashed line 60char's long
     print('Horizontal Histogram')
-    print(f"progress {progress_count}\t: {'*'*progress_count}")
-    print(f"Trailer {moduleT_count}\t: {'*'*moduleT_count}")
-    print(f"Retriever {moduleR_count}\t: {'*'*moduleR_count}")
-    print(f"Excluded {exclude_count}\t: {'*'*exclude_count}\n")
+    print(f"progress\t{progress_count}: {'*'*progress_count}".expandtabs(4)) # .expandtabs = custom sized tabs
+    print(f"Trailer \t{moduleT_count}: {'*'*moduleT_count}".expandtabs(4))
+    print(f"Retriever\t{moduleR_count}: {'*'*moduleR_count}".expandtabs(4))
+    print(f"Excluded\t{exclude_count}: {'*'*exclude_count}\n".expandtabs(4))
     print(f'{total_count} outcomes in total.')
     print('-'*60) # print dashed line 60char's long
 
