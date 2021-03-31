@@ -3,7 +3,7 @@
 # Student ID: w1833487        
 # Date: 23/03/2021
 
-def main(): # Main function
+def Main(): # Main function
     level_credit_list = [] # declare list to store user inputs 
 
     print('-'*60) # print dashed line 60char's long
@@ -28,4 +28,5 @@ def Logic(lct): # Logic Fuction with parsed list as parameter
         message = 'Progress' # if condtion True: assign string to variable
     return message # return varible
 
-main() # calls main function
+if __name__ == "__main__":
+    Main() # calls main function

@@ -99,4 +99,5 @@ def DirectInput(): # DirectInput function
         fail_credit = dataset[i][2] # assign values from list to variable
         ValidateInput() # calls ValidateInput function
 
-Main() # calls main function
+if __name__ == "__main__":
+    Main() # calls main function

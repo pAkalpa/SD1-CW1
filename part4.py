@@ -113,4 +113,6 @@ def ReRun(): # Ask User for ReRun function
             else:
                 pass
 
-Main() # calls main function
+if __name__ == "__main__":
+    Main() # calls main function
+    

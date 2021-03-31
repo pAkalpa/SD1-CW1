@@ -63,4 +63,6 @@ def Logic(lct): # Logic Fuction with parsed list as parameter
         message = 'Progress' # if condtion True: assign string to variable
     return message # return varible
 
-Main() # calls main function
+if __name__ == "__main__":
+    Main() # calls main function
+    
