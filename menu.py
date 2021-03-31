@@ -13,7 +13,6 @@ def Main():
 def MenuUI():
     """# Menu UI
     This function Prints Programs terminal UI"""
-    global menuItemlist
     space1 = ' '*2 # no of spaces
     menuItemlist = ['Progression Outcome Predictor','Student Version',"Student Version (Validation)","Staff Version with Histogram",
                     "Vertical Histogram (optional extension)","Alternative Staff Version (optional extension)",
@@ -29,7 +28,7 @@ def menuInputValidation():
     range_valid_list = [ '1', '2', '3', '4', '5', 'q', 'Q']
     option = '0'
     newline = '\n'*2
-    while option not in ['q','Q']:
+    while option not in range_valid_list[-2:]:
         MenuUI()
         option = str(input(f"+{'-'*5}+{'-'*49}+\nPlease Select an Option: "))
         toPrint = f'{option} Selected!'
