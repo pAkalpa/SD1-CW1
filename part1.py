@@ -6,7 +6,7 @@
 def Main(): # Main function
     level_credit_list = [] # declare list to store user inputs 
 
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
     pass_credit = int(input('Please Enter Your credits at pass: ')) # take user input and assign it to a variable
     defer_credit = int(input('Please Enter Your credits at defer: ')) # take user input and assign it to a variable
     fail_credit = int(input('Please Enter Your credits at fail: ')) # take user input and assign it to a variable
@@ -15,7 +15,7 @@ def Main(): # Main function
     message = Logic(level_credit_list) # pass list to logic Fuction and call logic function and store return value
     
     print(message) # print returned values from Logic function
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
 
 def Logic(lct): # Logic Fuction with parsed list as parameter
     if (lct[0] == 0 and lct[1] <= 40) or (lct[0] == 20 and lct[1] <= 20) or (lct[0] == 40 and lct[1] == 0): # condition 1

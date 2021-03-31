@@ -17,7 +17,7 @@ dataset = [[120, 0, 0], [100, 20, 0], [100, 0, 20], [80, 20, 20], [60, 40, 20],[
 # hardcoded dataset of input values
 
 def Main(): # Main function
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
     print('Staff Version with Histogram\n')
     DirectInput() # calls DirectInput function
     HistogramGenerator() # calls HistogramGenerator function
@@ -82,14 +82,14 @@ def Logic(lct): # Logic Fuction with parsed list as parameter
 
 def HistogramGenerator(): # Histogram Generator Function
     print()
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
     print('Horizontal Histogram')
     print(f"progress\t{progress_count}: {'*'*progress_count}".expandtabs(4)) # .expandtabs = custom sized tabs
     print(f"Trailer \t{moduleT_count}: {'*'*moduleT_count}".expandtabs(4))
     print(f"Retriever\t{moduleR_count}: {'*'*moduleR_count}".expandtabs(4))
     print(f"Excluded\t{exclude_count}: {'*'*exclude_count}\n".expandtabs(4))
     print(f'{total_count} outcomes in total.')
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
 
 def DirectInput(): # DirectInput function
     global pass_credit, defer_credit, fail_credit # declare varibles as global

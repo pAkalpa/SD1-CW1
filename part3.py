@@ -13,7 +13,7 @@ def Main():
     """Main function
     this function calls ReRun and HistogramGenerator function
     """
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
     print('Staff Version with Histogram\n')
     ReRun() # calls ReRun function
     HistogramGenerator() # calls HistogramGenerator function
@@ -81,14 +81,14 @@ def Logic(lct): # Logic Fuction with parsed list as parameter
     print(message)
 
 def HistogramGenerator(): # Histogram Generator Function
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
     print('Horizontal Histogram')
     print(f"progress {progress_count}\t: {'*'*progress_count}")
     print(f"Trailer {moduleT_count}\t: {'*'*moduleT_count}")
     print(f"Retriever {moduleR_count}\t: {'*'*moduleR_count}")
     print(f"Excluded {exclude_count}\t: {'*'*exclude_count}\n")
     print(f'{total_count} outcomes in total.')
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
 
 def ReRun(): # Ask User for ReRun function
     while True:

@@ -10,7 +10,7 @@ progress_count = 0 # declare varible
 total_count = 0 # declare varible
 
 def Main(): # Main function
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
     print('Staff Version with Histogram\n')
     ReRun() # calls ReRun function
     HistogramGenerator() # calls HistogramGenerator function
@@ -78,7 +78,7 @@ def Logic(lct): # Logic Fuction with parsed list as parameter
     print(message)
 
 def HistogramGenerator(): # Histogram Generator Function
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
     print(f'''Vertical Histogram\nProgress {progress_count} | Trailer {moduleT_count} | Retriever {moduleR_count} | Excluded {exclude_count}''')
     space2 = " "*5
     space1 = " "*6
@@ -97,7 +97,7 @@ def HistogramGenerator(): # Histogram Generator Function
             print(toPrint)
 
     print(f'{total_count} outcomes in total.')
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
 
 def ReRun(): # Ask User for ReRun function
     while True:
