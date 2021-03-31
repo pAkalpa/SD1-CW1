@@ -9,7 +9,10 @@ exclude_count = 0 # declare varible
 progress_count = 0 # declare varible
 total_count = 0 # declare varible
 
-def Main(): # Main function
+def Main(): 
+    """# Main function
+    This function calls ReRun and HistogramGenerator functions
+    """
     print('-'*57) # print dashed line 60char's long
     print('Staff Version with Histogram\n')
     ReRun() # calls ReRun function

@@ -16,7 +16,10 @@ fail_credit = 0 # declare varible
 dataset = [[120, 0, 0], [100, 20, 0], [100, 0, 20], [80, 20, 20], [60, 40, 20],[40, 40, 40], [20, 40, 60], [20, 20, 80], [20, 0, 100], [0, 0, 120]]
 # hardcoded dataset of input values
 
-def Main(): # Main function
+def Main(): 
+    """# Main function
+    This Fuction Calls DirectInput and Histogram functions
+    """
     print('-'*57) # print dashed line 60char's long
     print('Staff Version with Histogram\n')
     DirectInput() # calls DirectInput function

@@ -10,7 +10,7 @@ progress_count = 0 # declare varible
 total_count = 0 # declare varible
 
 def Main(): 
-    """Main function
+    """#Main function
     this function calls ReRun and HistogramGenerator function
     """
     print('-'*57) # print dashed line 60char's long

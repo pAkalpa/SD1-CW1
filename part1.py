@@ -3,7 +3,10 @@
 # Student ID: w1833487        
 # Date: 23/03/2021
 
-def Main(): # Main function
+def Main(): 
+    """# Main function
+    This Function take user inputs and parse it to Logic funtion. & Prints Return Value From Logic function
+    """
     level_credit_list = [] # declare list to store user inputs 
 
     print('-'*57) # print dashed line 60char's long
