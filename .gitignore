@@ -2,3 +2,4 @@ desktop.ini
 *.zip
 .vscode
 __pycache__
+*.txt
