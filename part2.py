@@ -2,14 +2,19 @@
 # Any code taken from other sources is referenced within my code solution.
 # Student ID: w1833487        
 # Date: 23/03/2021
-def Main(): # Main function
+def Main(): 
+    """# Main function
+    this function Call Validate Function and store return value &
+    call Logic function and print return value
+    """
     print('-'*60) # print dashed line 60char's long
     lct = ValidateInput() # store return value and call fuction
     message = Logic(lct) # store retun value and call funtion with parsing previous returned value
     print(message) # print returned values from Logic function
     print('-'*60) # print dashed line 60char's long
 
-def ValidateInput(): # use Inputs and Validation function
+def ValidateInput(): 
+    """this function take Inputs and Validate"""
     range_credit_list = [0, 20, 40, 60, 80, 100, 120] # declare list of valid input ranges
 
     while True:
@@ -52,7 +57,10 @@ def ValidateInput(): # use Inputs and Validation function
             level_credit_list.clear # if condition False: clear list
     return level_credit_list # return varible
 
-def Logic(lct): # Logic Fuction with parsed list as parameter
+def Logic(lct): 
+    """Logic Fuction 
+    this function contains logic & returns string
+    """
     if (lct[0] == 0 and lct[1] <= 40) or (lct[0] == 20 and lct[1] <= 20) or (lct[0] == 40 and lct[1] == 0):
         message = 'Exclude' # if condtion True: assign string to variable
     elif (lct[0] == 0 and lct[1] >= 60) or (lct[0] == 20 and lct[1] >= 40) or (lct[0] == 40 and lct[1] != 0) or (lct[0] == 60) or (lct[0] == 80):

@@ -15,7 +15,8 @@ def Main(): # Main function
     ReRun() # calls ReRun function
     HistogramGenerator() # calls HistogramGenerator function
 
-def ValidateInput(): # use Inputs and Validation function
+def ValidateInput(): 
+    """this function take Inputs and Validate"""
     range_credit_list = [0, 20, 40, 60, 80, 100, 120] # declare list of valid input ranges
     global total_count # declare varible as global
     while True:

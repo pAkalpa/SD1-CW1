@@ -9,13 +9,17 @@ exclude_count = 0 # declare varible
 progress_count = 0 # declare varible
 total_count = 0 # declare varible
 
-def Main(): # Main function
+def Main(): 
+    """Main function
+    this function calls ReRun and HistogramGenerator function
+    """
     print('-'*60) # print dashed line 60char's long
     print('Staff Version with Histogram\n')
     ReRun() # calls ReRun function
     HistogramGenerator() # calls HistogramGenerator function
 
-def ValidateInput(): # use Inputs and Validation function
+def ValidateInput():
+    """this function take Inputs and Validate"""
     range_credit_list = [0, 20, 40, 60, 80, 100, 120] # declare list of valid input ranges
     global total_count # declare varible as global
     while True:
