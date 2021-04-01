@@ -7,11 +7,11 @@ def Main():
     this function Call Validate Function and store return value &
     call Logic function and print return value
     """
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
     lct = ValidateInput() # store return value and call fuction
     message = Logic(lct) # store retun value and call funtion with parsing previous returned value
     print(message) # print returned values from Logic function
-    print('-'*60) # print dashed line 60char's long
+    print('-'*57) # print dashed line 60char's long
 
 def ValidateInput(): 
     """this function take Inputs and Validate"""
