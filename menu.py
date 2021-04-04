@@ -7,7 +7,6 @@ import part5 #import part5.py
 def Main():
     """This is the main this function calls other functions"""
     menuInputValidation()
-    pass
 
 
 def MenuUI():

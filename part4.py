@@ -115,7 +115,7 @@ def ReRun(): # Ask User for ReRun function
             if option == 'q':
                 break # if condition True: break loop
             else:
-                pass
+                continue
 
 if __name__ == "__main__":
     Main() # calls main function
